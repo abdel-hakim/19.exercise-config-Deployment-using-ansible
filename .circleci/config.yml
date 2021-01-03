@@ -14,7 +14,7 @@ jobs:
       - run:
           name: configure server
           command: |
-            ansible-playbook  playbook.yml  -i inventory.txt
+            ansible-playbook  project/playbook.yml  -i inventory.txt
 workflows:
   myflow:
     jobs:
