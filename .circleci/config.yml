@@ -11,10 +11,10 @@ jobs:
           name: install dependencies
           command: |
             apk add --update --allow-untrusted ansible
-      - run: export ANSIBLE_HOST_KEY_CHECKING=False
       - run:
           name: configure server
           command: |
+            export ANSIBLE_HOST_KEY_CHECKING=False
             ansible-playbook  project/playbook.yml  -i project/inventory.txt
   smoke_test:
     docker:
