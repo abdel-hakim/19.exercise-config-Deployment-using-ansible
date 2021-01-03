@@ -24,7 +24,7 @@ jobs:
       - run:
           name: smoke test script
           command: |
-            URL="54.188.65.146:3000"
+            URL="ec2-34-219-205-255.us-west-2.compute.amazonaws.com:3000"
             if curl -s --head ${URL}
             then
               return 0
