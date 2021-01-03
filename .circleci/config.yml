@@ -11,6 +11,7 @@ jobs:
           name: install dependencies
           command: |
             apk add --update --allow-untrusted ansible
+      - run: export ANSIBLE_HOST_KEY_CHECKING=False
       - run:
           name: configure server
           command: |
