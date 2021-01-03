@@ -1,0 +1,21 @@
+version: 2.1
+jobs:
+  config_deploy_infra:
+    docker:
+      - image: python:3.7-alpine3.11
+    steps:
+      - checkout
+      - add_ssh_keys:
+          fingerprints: ["e7:73:c6:34:99:04:15:02:87:e1:4a:d3:f1:92:7b:28"]
+      - run:
+        name: install dependencies
+        command: |
+          apk add --update ansible
+      - run:
+        name: configure server
+        command: |
+          ansible-playbook -i inventory.txt main-remote.yml
+workflows:
+  myflow:
+    jobs:
+      - config_deploy_infra
