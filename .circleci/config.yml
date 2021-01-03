@@ -10,11 +10,11 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            apk add --update ansible
+            apk add --update --allow-untrusted ansible
       - run:
           name: configure server
           command: |
-            ansible-playbook -i inventory.txt playbook.yml
+            ansible-playbook  playbook.yml  -i inventory.txt
 workflows:
   myflow:
     jobs:
