@@ -36,4 +36,4 @@ workflows:
       - config_deploy_infra
       - smoke_test:
           requires:
-            -config_deploy_infra
+            - config_deploy_infra
